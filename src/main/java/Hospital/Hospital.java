@@ -1,12 +1,21 @@
+package Hospital;
+
+import java.io.IOException;
 import java.util.ArrayList;
+import Gestores.*;
 
 public class Hospital {
-	private ArrayList<Paciente> pacientes;
-	public ArrayList<Medico> medicos;
+	//Atributos
+	private ArrayList<Medico> medicos = new ArrayList<Medico>();
+	private ArrayList<Paciente> pacientes = new ArrayList<Paciente>();
 
-	public Hospital() {
-		this.pacientes = new ArrayList<Paciente>();
-		this.medicos = new ArrayList<Medico>();
+	//Métodos
+	public ArrayList<Paciente> getPacientes() {
+		return pacientes;
+	}
+
+	public ArrayList<Medico> getMedicos() {
+		return medicos;
 	}
 
 	public void agregarPaciente(Paciente paciente) {
@@ -51,5 +60,13 @@ public class Hospital {
 		System.out.println("Médico no encontrado");
 	}
 
+	public void fichaPaciente(Paciente paciente) throws IOException {
+		GestorPDF.generarFichaPaciente(paciente);
+	}
 
+//Constructor
+	public Hospital() {
+		this.pacientes = new ArrayList<Paciente>();
+		this.medicos = new ArrayList<Medico>();
+	}
 }
