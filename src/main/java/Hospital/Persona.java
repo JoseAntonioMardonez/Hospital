@@ -40,7 +40,7 @@ public abstract class Persona {
 	}
 
 	public String toString(){
-		return nombre+", "+apellido+" ,"+edad+" ,"+run;
+		return nombre+", "+apellido+", "+edad+", "+run;
 	}
 
 	public Persona(String nombre, String apellido, int edad, String run) {

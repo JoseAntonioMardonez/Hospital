@@ -38,15 +38,16 @@ public class Hospital {
 		System.out.println("Médico eliminado");
 	}
 
-	public void buscarPaciente(String nombre) {
+	public Paciente buscarPaciente(String run) {
 		for(Paciente paciente : this.pacientes){
-			if(paciente.getNombre().equals(nombre)){
+			if(paciente.getRun().equals(run)){
 				System.out.println("Paciente encontrado");
-				return;
+				return paciente;
 			}
 		}
 
 		System.out.println("Paciente no encontrado");
+		return null;
 	}
 
 	public void buscarMedico(String nombre) {

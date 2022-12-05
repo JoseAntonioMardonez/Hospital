@@ -70,7 +70,7 @@ public class GestorDatos {
 	public static boolean registrarDatos(List objetos, String direccionArchivo) {
 		try {
 			File file = new File(direccionArchivo);
-			if (Files.deleteIfExists(Paths.get("Ruta Archivo"))) {
+			if (Files.deleteIfExists(Paths.get(direccionArchivo))) {
 				System.out.println("El fichero ha sido borrado satisfactoriamente");
 			} else {
 				System.out.println("El fichero no puede ser borrado");

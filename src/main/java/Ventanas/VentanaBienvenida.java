@@ -12,10 +12,11 @@ public class VentanaBienvenida extends Ventana{
     private JButton botonRegistrarMedico;
     private JButton botonBuscarPaciente;
     private JButton botonBuscarMedico;
+    private JButton botonMostrarPacientes;
     private Hospital hospital;
 
     public VentanaBienvenida(Hospital hospital) {
-        super("Menu Hospital", 500, 520);
+        super("Menu Hospital", 500, 700);
         this.hospital=hospital;
         generarElementosVentana();
     }
@@ -26,6 +27,7 @@ public class VentanaBienvenida extends Ventana{
         generarBotonRegistrarMedico();
         generarBotonBuscarPaciente();
         generarBotonBuscarMedico();
+        generarBotonMostrarPacientes();
         generarBotonSalir();
     }
 
@@ -42,27 +44,33 @@ public class VentanaBienvenida extends Ventana{
     }
     private void generarBotonSalir() {
         String textoBoton = "Salir";
-        this.botonSalida = super.generarBoton(textoBoton, 175, 420, 150, 40);
+        this.botonSalida = super.generarBoton(textoBoton, 175, 520, 150, 40);
         this.add(this.botonSalida);
         this.botonSalida.addActionListener(this);
     }
     private void generarBotonRegistrarMedico() {
         String textoBoton = "Registrar Medico";
-        this.botonRegistrarMedico = super.generarBoton(textoBoton, 175, 180, 150, 40);
+        this.botonRegistrarMedico = super.generarBoton(textoBoton, 175, 340, 150, 40);
         this.add(this.botonRegistrarMedico);
         this.botonRegistrarMedico.addActionListener(this);
     }
     private void generarBotonBuscarPaciente(){
         String textoBoton = "Buscar Paciente";
-        this.botonBuscarPaciente=super.generarBoton(textoBoton, 175, 260, 150, 40);
+        this.botonBuscarPaciente=super.generarBoton(textoBoton, 175, 180, 150, 40);
         this.add(this.botonBuscarPaciente);
         this.botonBuscarPaciente.addActionListener(this);
     }
     private void generarBotonBuscarMedico(){
         String textoBoton = "Buscar Medico";
-        this.botonBuscarMedico=super.generarBoton(textoBoton, 175, 340, 150, 40);
+        this.botonBuscarMedico=super.generarBoton(textoBoton, 175, 420, 150, 40);
         this.add(this.botonBuscarMedico);
         this.botonBuscarMedico.addActionListener(this);
+    }
+    private void generarBotonMostrarPacientes(){
+        String textoBoton = "Mostrar Pacientes";
+        this.botonMostrarPacientes=super.generarBoton(textoBoton, 175, 260, 150, 40);
+        this.add(this.botonMostrarPacientes);
+        this.botonMostrarPacientes.addActionListener(this);
     }
 
 
@@ -77,12 +85,16 @@ public class VentanaBienvenida extends Ventana{
                     JOptionPane.INFORMATION_MESSAGE);
         }
         if(e.getSource() == this.botonBuscarPaciente){
-            VentanaBusquedaPaciente ventanaBusquedaVehiculo= new VentanaBusquedaPaciente(hospital);
+            VentanaBusquedaPaciente ventanaBusquedaPaciente= new VentanaBusquedaPaciente(hospital);
             this.dispose();
         }
         if(e.getSource() == this.botonBuscarMedico){
             JOptionPane.showMessageDialog(this,"Próximamente","Mensaje Informativo",
                     JOptionPane.INFORMATION_MESSAGE);
+        }
+        if(e.getSource() == this.botonMostrarPacientes){
+            //VentanaMostrarPacientes ventanaMostrarPacientes= new VentanaMostrarPacientes(datos);
+            this.dispose();
         }
 
         if(e.getSource() == this.botonSalida){

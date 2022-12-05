@@ -1,6 +1,6 @@
 package Hospital;
-import Ventanas.*;
-import Gestores.*;
+
+import Ventanas2.VentanaPrincipal;
 
 import java.io.IOException;
 
@@ -14,8 +14,9 @@ public class Launcher {
 		hospital.agregarPaciente(paciente2);
 		//GestorDatos.registrarDato(paciente1,"src\\main\\java\\Gestores\\Pacientes.txt");
 		//GestorDatos.registrarDatos(hospital.getPacientes(),"C:\\Users\\josem\\IdeaProjects\\Hospital\\src\\main\\java\\Gestores\\Pacientes.txt");
-		hospital.fichaPaciente(paciente1);
-		//new VentanaBienvenida(hospital);
+		//hospital.fichaPaciente(paciente1);
+		//new Ventanas.VentanaBienvenida(hospital);
+		new VentanaPrincipal(hospital);
 	}
 
 }
